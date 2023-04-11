@@ -1,0 +1,27 @@
+import React from 'react'
+import ReactDOM from 'react-dom/client'
+import { ThemeProvider } from "styled-components";
+import { GlobalStyle, theme} from "./styles";
+// import { Suspense } from 'react';
+// import { Loading } from './components';
+// import RTKQuery from './RTKQuery'
+
+// import { ApiProvider } from '@reduxjs/toolkit/query/react';
+
+// import { productsApi } from './store/productsApi';
+import { RouterProvider } from "react-router-dom";
+import { router } from "./routers/RootRouter.jsx";
+// import "./styles/index.scss"
+
+
+
+ReactDOM.createRoot(document.getElementById('root')).render(
+  // <ApiProvider api={productsApi}>
+  <ThemeProvider theme={theme}>
+    <React.StrictMode>
+      <RouterProvider router={router} />
+    </React.StrictMode>
+    <GlobalStyle />
+  </ThemeProvider>
+  // </ApiProvider>
+)
