@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 export const Search = () => {
     const navigate = useNavigate();
@@ -21,7 +22,7 @@ export const Search = () => {
   return (
     <form className="form" onSubmit={handleSubmit}>
         <input className="input" type="text" onChange={handleSearch} />
-        <button type="submit">Buscar</button>
+        <Link to={`perfil/${query}`}>Buscar</Link>
     </form>
   )
 }
