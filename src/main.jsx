@@ -9,8 +9,10 @@ import { GlobalStyle, theme} from "./styles";
 // import { ApiProvider } from '@reduxjs/toolkit/query/react';
 
 // import { productsApi } from './store/productsApi';
-import { RouterProvider } from "react-router-dom";
-import { router } from "./routers/RootRouter.jsx";
+// import { RouterProvider } from "react-router-dom";
+// import { router } from "./routers/RootRouter.jsx";
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { Home, Perfil } from './pages';
 // import "./styles/index.scss"
 
 
@@ -19,7 +21,12 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   // <ApiProvider api={productsApi}>
   <ThemeProvider theme={theme}>
     <React.StrictMode>
-      <RouterProvider router={router} />
+       <BrowserRouter>
+       <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="perfil/:username" element={<Perfil />} />
+       </Routes>
+       </BrowserRouter>
     </React.StrictMode>
     <GlobalStyle />
   </ThemeProvider>
