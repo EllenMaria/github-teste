@@ -12,6 +12,12 @@ export const Perfil = () => {
   };
 
   const { username } = useParams();
+ 
+  const [profile, loadingProfile] = useAxios({
+    axiosInstance: githubInstance,
+    method: "get",
+    url: `${username}`,
+  });
 
   const [repositories, loadingRepo] = useAxios({
     axiosInstance: githubInstance,
@@ -22,11 +28,9 @@ export const Perfil = () => {
   let countStars = 0;
   repositories.map(item => countStars += item.stargazers_count)
 
-  const [profile, loadingProfile] = useAxios({
-    axiosInstance: githubInstance,
-    method: "get",
-    url: `${username}`,
-  });
+
+  console.log(username);
+  console.log(profile);
 
   if (loadingProfile) return <Loading />;
   if (loadingRepo) return <Skeleton />;
