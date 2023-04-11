@@ -24,7 +24,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
        <BrowserRouter>
        <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="perfil/:username" element={<Perfil />} />
+        <Route path="/perfil/:username" element={<Perfil />} />
        </Routes>
        </BrowserRouter>
     </React.StrictMode>
