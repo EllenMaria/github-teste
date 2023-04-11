@@ -20,14 +20,14 @@ import { Home, Perfil } from './pages';
 ReactDOM.createRoot(document.getElementById('root')).render(
   // <ApiProvider api={productsApi}>
   <ThemeProvider theme={theme}>
-    {/* <React.StrictMode> */}
+    <React.StrictMode>
        <BrowserRouter>
        <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/perfil/:username" element={<Perfil />} />
        </Routes>
        </BrowserRouter>
-    {/* </React.StrictMode> */}
+    </React.StrictMode>
     <GlobalStyle />
   </ThemeProvider>
   // </ApiProvider>

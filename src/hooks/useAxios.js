@@ -18,9 +18,7 @@ export default function useAxios(configRequest) {
   useEffect(() => {
   const fetchData = async () => {
     try {
-      const response = await axiosInstance[method](url, {
-        signal: controller.signal,
-      });
+      const response = await axiosInstance[method](url);
       setData(response.data);
       setLoading(false);
       return response.data;
